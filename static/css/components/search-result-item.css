@@ -156,6 +156,9 @@
   width: 175px;
   height: auto;
   object-fit: contain;
+  display: block;
+  margin-inline: auto;
+  overflow: hidden;
 }
 
 .searchResultItem .imageLg {
