@@ -9,9 +9,16 @@
  * @param {HTMLElement} pageHistoryElement - the #pageHistory table
  */
 export function initHistory(pageHistoryElement) {
-    const i18n = JSON.parse(pageHistoryElement.dataset.i18n);
+    if (!pageHistoryElement || !pageHistoryElement.dataset || !pageHistoryElement.dataset.i18n) return;
     const bar = document.getElementById('pageHistoryCompare');
     if (!bar) return;
+
+    let i18n;
+    try {
+        i18n = JSON.parse(pageHistoryElement.dataset.i18n);
+    } catch {
+        return;
+    }
 
     const compareLink = bar.querySelector('[data-compare-link]');
     const clearButton = bar.querySelector('[data-compare-clear]');
