@@ -647,7 +647,7 @@ $(function () {
     }
 
     // History page comparison
-    const pageHistory = document.querySelector('#pageHistory');
+    const pageHistory = document.querySelector('table#pageHistory[data-i18n]');
     if (pageHistory) {
         import('./history').then(module => module.initHistory(pageHistory));
     }
